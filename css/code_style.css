@@ -1,0 +1,64 @@
+
+@font-face{
+
+font-family: 'Courier';
+
+src: url('../fonts/Courier Prime.ttf');
+
+font-weight: bold;
+
+font-style: normal;
+
+}
+
+
+body {
+  background-color: #434343;
+  font-size: 80%;
+}
+
+body, html {
+  height: 100%;
+  display: grid;
+    
+}
+span {
+  margin: auto;
+}
+
+game_text{
+    margin:auto;
+    font-family: 'Courier';
+    color: white;
+    font-size: 180%;
+    text-decoration: none;
+}
+.wrapper_header {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  font-size: 150%;
+  font-weight: 300;
+  line-height: 1.42em;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 0.2fr 2fr 0.1fr 0.1fr 4fr 0.1fr;
+}
+
+.wrapper2 {
+  display: grid;
+  grid-template-columns: 0.05fr 0.5fr 0.05fr 0.5fr 0.05fr 0.5fr 0.05fr 4fr 0.1fr;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
+
+#rcorners4 {
+    border-radius: 15px;
+    background: white;
+    padding: 20px; 
+    width: 800px;
+    height: 25px; 
+} 
+
