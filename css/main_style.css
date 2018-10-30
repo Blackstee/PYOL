@@ -34,7 +34,9 @@ game_text{
     text-decoration: none;
 }
 .wrapper_header{
-    max-height: 40px;
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+font-size: 80%;
 }
 .wrapper {
   display: grid;
