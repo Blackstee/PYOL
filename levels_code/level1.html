@@ -105,6 +105,12 @@
 			language: 'python',
             theme: "myCustomTheme"
 		});
+        function saveInput() 
+        {
+            editorInput = editor.getValue()
+            //alert(editorInput)
+        }
+        document.getElementById('container').onchange = saveInput;
 	});
 </script>
     
