@@ -10,6 +10,7 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/code_style.css" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet" media="all">  
     
     
     
@@ -17,6 +18,145 @@
 </head>
 
 <body>
+    
+    
+    <!-- WINNER PAGE -->
+    <div id="winner_images" style="display:none">
+     <div id="winner_1" style="display:none">
+         <div id="bg_trans" ></div>
+     </div>
+        
+        <div id="winner_4" style="display:none">
+         <img src="../img/boy.gif"/>
+     </div>
+        <div id="winner_5" style="display:none">
+         <div id="bg_trans_2"  style= "border-left:5px dashed white;">
+             <div class="wrapper_header_" >
+                 <div></div> 
+                <game_text> 
+                    <br>
+                    blackstee
+                    <br>
+                        356<img src="../img/coin.png" alt="coin" style="width:20px;">
+                </game_text>
+                <div></div>
+             </div>
+             <div class="wrapper_result" style="height:20%" >
+                 <div>
+                 </div>
+                 <div></div>
+                 <div></div>
+             </div>
+             <div class="wrapper_result">
+                 <div></div>
+             <span><game_text style="font-size: 400%;">CONGRATULATIONS!
+             </game_text></span>
+            </div>
+             <div class="wrapper_result">
+                 <div></div>
+             <span><game_text style="font-size: 300%;"> 
+                 <br><br>
+            <a href="../levels_code/level_image.html" > > NEXT LEVEL</a><br>
+               -----------<br>
+            <a href= "../main.html"> > MENU</a><br>
+               -----------<br>
+            
+        </game_text></span>
+            </div>
+             <div class="wrapper_result">
+                 <div></div>
+             <span><game_text style="font-size: 400%;">
+             </game_text></span>
+            </div>
+        </div>
+            
+     </div>
+        <div id="winner_2" style="display:none">
+     </div>
+        <div id="winner_3" style="display:none">
+     </div>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- LOOSER PAGE -->
+    <div id="looser_images" style="display:none">
+     <div id="looser_1" style="display:none">
+         <div id="bg_trans" ></div>
+     </div>
+        
+        <div id="looser_4" style="display:none">
+         <img src="../img/boy_sad.gif"/>
+     </div>
+        <div id="looser_5" style="display:none">
+         <div id="bg_trans_2"  style= "border-left:5px dashed white;">
+             <div class="wrapper_header_" >
+                 <div></div> 
+                <game_text> 
+                    <br>
+                    blackstee
+                    <br>
+                        356<img src="../img/coin.png" alt="coin" style="width:20px;">
+                </game_text>
+                <div></div>
+             </div>
+             <div class="wrapper_result" style="height:15%" >
+                 <div>
+                 </div>
+                 <div></div>
+                 <div></div>
+             </div>
+             <div class="wrapper_result">
+                 <div></div>
+             <span><game_text style="font-size: 300%;">OOOPS! TRY AGAIN
+             </game_text></span>
+            </div>
+             <div class="wrapper_result">
+                 <div></div>
+             <span><game_text style="font-size: 300%;"> 
+                 <br><br>
+            <a href="../levels_code/level_image.html" > > LEVEL AGAIN</a><br>
+               -----------<br>
+            <a href= "../main.html"> > MENU</a><br>
+               -----------<br>
+            
+        </game_text></span>
+            </div>
+             <div class="wrapper_result">
+                 <div></div>
+             <span><game_text style="font-size: 400%;">
+             </game_text></span>
+            </div>
+        </div>
+            
+     </div>
+        <div id="looser_2" style="display:none">
+     </div>
+        <div id="looser_3" style="display:none">
+     </div>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     <div class="wrapper_header" style= "border-bottom:5px dashed white;">
         <game_text><a href = "../main.html">MENU</a></game_text>
@@ -26,8 +166,9 @@
     </div>
     <div class="wrapper" style= "border-bottom:5px dashed white;">
         <div></div>
-        <div >
+        <div  style = "overflow: scroll;">
         <span >
+            
             <game_text>
                 <br><br>
                 <b>> NEW TASK</b>
@@ -50,16 +191,20 @@
         <div></div>
         
     </div>
+    
     <div class="wrapper2">
         <div></div>
         <span><img src="../img/run.png" alt="run" style="width:30px;" onclick = "run()"></span>  
         <div></div>
         <span><img src="../img/stop.png" alt="stop" style="width:50px;" onclick = "stop()"></span>  
         <div></div>
-        <span><img src="../img/delete.png" alt="delete" style="width:50px;" onclick = "delete()"></span>
+        <span><img src="../img/delete.png" alt="delete" style="width:50px;" onclick = "del()"></span>
         <div></div>
-        <span><p id="rcorners4"></p></span>
+        <span><p id="console"></p></span>
     </div>
+    
+    
+    
     
     
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -83,6 +228,7 @@
 		}
 	});
     
+    var text_value;
 
 	require(['vs/editor/editor.main'], function() {
         
@@ -98,14 +244,77 @@
     
 		var editor = monaco.editor.create(document.getElementById('container'), {
 			value: [
-				'function x() {',
-				'\tconsole.log("Hello world!");',
-				'}'
+				'def x():',
+				'\tprint("Hello world!")',
+				''
 			].join('\n'),
 			language: 'python',
             theme: "myCustomTheme"
 		});
+		editorInput = editor.getValue();
+		function saveInput()
+        {
+            editorInput = editor.getValue();
+            //alert(editorInput);
+        }
+        document.getElementById('container').onchange = saveInput;
 	});
+function run()
+{
+    
+    var xhr = new XMLHttpRequest();
+    var newURL = window.location.protocol;
+    xhr.open('POST', 'http://127.0.0.1:8000/learn/submit', true);
+    let csrftoken = document.getElementsByName("csrfmiddlewaretoken")[0].value
+    xhr.setRequestHeader("X-CSRFToken", csrftoken)
+    xhr.send(JSON.stringify(editorInput));   
+    xhr.onreadystatechange = function() { // (3)
+        if (xhr.readyState != 4) return;
+      
+        if (xhr.status != 200) {
+          alert(xhr.status + ': ' + xhr.statusText);
+        } else {
+            cons = document.getElementById("console");
+            cons.innerText = xhr.responseText;
+            
+        }
+      
+      }
+    //alert(editorInput);
+}
+    
+    function show_winner(){
+        document.getElementById("winner_images").style.display = "block"; 
+        for (var i = 1; i < 6; i++) {
+            text="showNow_win("+i+")"
+           setTimeout(text, 500+50*i); 
+        }     
+       }
+    function showNow_win(i) { 
+    text="winner_"+i;
+    document.getElementById(text).style.display = "block"; 
+        
+     }
+    function show_looser(){
+        document.getElementById("looser_images").style.display = "block"; 
+        for (var i = 1; i < 6; i++) {
+            text="showNow_loos("+i+")"
+           setTimeout(text, 500+50*i); 
+        }     
+       }
+    function showNow_loos(i) { 
+    text="looser_"+i;
+    document.getElementById(text).style.display = "block"; 
+        
+     }
+    
+    function stop (){
+        show_winner();
+    }
+    
+    function del(){
+        show_looser();
+    }
 </script>
     
     

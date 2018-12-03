@@ -46,4 +46,7 @@ a{
     text-decoration: none;
     color:white;
 }
-
+.wrapper_start {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
