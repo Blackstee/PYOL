@@ -166,10 +166,12 @@
     </div>
     <div class="wrapper" style= "border-bottom:5px dashed white;">
         <div></div>
-        <div  style = "overflow: scroll;">
+        <div >
         <span >
             
-            <game_text>
+            <game_text >
+                <div class="scroll">You can use the overflow property when you want to have better       control of the layout. The default value is visible.better control of the layout. The default value is visible.better control of the layout. The default value is visible.better control of the layout. The default value is visible.better control of the layout. The default value is visible.better control of the layout. The default value is visible.better 
+
                 <br><br>
                 <b>> NEW TASK</b>
             <br><br>
@@ -180,9 +182,17 @@
             > use operator <b>+</b>
             <br><br>
             > click the <b>green button</b> to run your code
-
+            > you have to create <b>one function</b> more
+            <br><br>
+            > create function <b>calculate_plus</b> like the <b>calculate_power</b>
+            <br><br>
+            > use operator <b>+</b>
+            <br><br>
+            > click the <b>green button</b> to run your code
+                    </div>
+                
             </game_text>
-        </span>
+            </span>
         </div>
         <div style= "border-right:5px dashed white;"></div>
         <div></div>
@@ -251,18 +261,11 @@
 			language: 'python',
             theme: "myCustomTheme"
 		});
-<<<<<<< HEAD
 		editorInput = editor.getValue();
 		function saveInput()
         {
             editorInput = editor.getValue();
             //alert(editorInput);
-=======
-        function saveInput() 
-        {
-            editorInput = editor.getValue()
-            //alert(editorInput)
->>>>>>> origin/master
         }
         document.getElementById('container').onchange = saveInput;
 	});
