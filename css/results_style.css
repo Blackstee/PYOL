@@ -83,7 +83,6 @@ h2 a {
 .container th h1 {
 	  font-weight: bold;
 	  font-size: 1em;
-  text-align: left;
   color: white;
 }
 
@@ -151,3 +150,47 @@ h2 a {
 .container td:nth-child(4),
 .container th:nth-child(4) { display: none; }
 }
+
+td{
+    text-align: center;
+}
+
+th{
+  text-align: center;  
+}
+
+.photo {
+    display: inline-block; /* Строчно-блочный элемент */
+    position: relative; /* Относительное позиционирование */
+   }
+.photo:hover::after {
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    right: 80%; 
+    top: 30%; /* Положение подсказки */
+    z-index: 2000; /* Отображаем подсказку поверх других элементов */
+    background: rgba(0,0,0,0.7); /* Полупрозрачный цвет фона */
+    font-family: Arial, sans-serif; /* Гарнитура шрифта */
+    font-size: 11px; /* Размер текста подсказки */
+    padding: 5px 10px; 
+    width: 20px;
+    color : azure;
+   }
+
+.photo2 {
+    display: inline-block; /* Строчно-блочный элемент */
+    position: relative; /* Относительное позиционирование */
+   }
+.photo2:hover::after {
+    content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    right: 100%; 
+    top: 30%; /* Положение подсказки */
+    z-index: 2000; /* Отображаем подсказку поверх других элементов */
+    background: rgba(0,0,0,0.05); /* Полупрозрачный цвет фона */
+    font-family: Arial, sans-serif; /* Гарнитура шрифта */
+    font-size: 11px; /* Размер текста подсказки */
+    padding: 0px 10px; 
+    width: 25px;
+    color : azure;
+   }
