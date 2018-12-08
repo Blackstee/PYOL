@@ -166,15 +166,15 @@ th{
 .photo:hover::after {
     content: attr(data-title); /* Выводим текст */
     position: absolute; /* Абсолютное позиционирование */
-    right: 80%; 
-    top: 30%; /* Положение подсказки */
+    right: 100%; 
+    top: 70%; /* Положение подсказки */
     z-index: 2000; /* Отображаем подсказку поверх других элементов */
-    background: rgba(0,0,0,0.7); /* Полупрозрачный цвет фона */
+    background: rgba(0,0,0,0); /* Полупрозрачный цвет фона */
     font-family: Arial, sans-serif; /* Гарнитура шрифта */
     font-size: 11px; /* Размер текста подсказки */
     padding: 5px 10px; 
     width: 20px;
-    color : azure;
+    color : gray;
    }
 
 .photo2 {
@@ -187,7 +187,7 @@ th{
     right: 100%; 
     top: 30%; /* Положение подсказки */
     z-index: 2000; /* Отображаем подсказку поверх других элементов */
-    background: rgba(0,0,0,0.05); /* Полупрозрачный цвет фона */
+    background: rgba(0,0,0,0); /* Полупрозрачный цвет фона */
     font-family: Arial, sans-serif; /* Гарнитура шрифта */
     font-size: 11px; /* Размер текста подсказки */
     padding: 0px 10px; 

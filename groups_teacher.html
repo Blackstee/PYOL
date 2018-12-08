@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Groups</title>
   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 
     <!-- Custom styles for this template -->
@@ -19,8 +20,64 @@
         <game_text><a href = "main_teacher.html">MENU</a></game_text>
         <game_text>Groups
         </game_text>
-        <div><br><br><div class="photo2" data-title="Add"><img src="img/add.png" alt="edit" style="width:30px;" onclick = "add()"></div></div>
+        <div><br><br><div class="photo2" data-title="Add" ><img data-toggle="modal" data-target="#addGroupModal" src="img/add.png" alt="edit" style="width:30px;" ></div></div>
     </div>
+    
+    
+    
+    
+    
+    
+    <div id="addGroupModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="color:black;">
+            <div class="modal-header">
+                <h3>Add new group</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form class="form" role="form" autocomplete="off" id="formAddGroup" novalidate="" method="POST">
+                    <div class="form-group">
+                        <label for="gname">Enter group name</label>
+                        <input type="text" class="form-control form-control-lg" name="gname" id="gname" required="">
+                        <div class="invalid-feedback">Oops, you missed this one.</div>
+                    </div>
+                    
+                    <div class="form-group py-4">
+                        <button class="btn btn-outline-secondary btn-lg" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                        <button type="submit" class="btn btn-success btn-lg float-right" id="btnAddGroup">Add group</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+    <!-- Modal -->
+<div id="deleteModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="color:black;">
+            <div class="modal-header">
+                <h3>Remove group from list</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form class="form" role="form" autocomplete="off" id="formExport" novalidate="" method="POST">
+                    
+                        <h4>Are you sure? </h4>
+                    
+                    
+                    
+                    <div class="form-group py-4">
+                        <button class="btn btn-outline-secondary btn-lg" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                        <button type="submit" class="btn btn-danger btn-lg float-right" id="btnExport">Remove</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
     
 <table class="container">
 	<thead>
@@ -42,7 +99,7 @@
             <td> <div class="photo" data-title="Edit"><img src="img/edit.png" alt="edit" style="width:30px;" onclick = "edit()"></div>
                 </td>
             <td>
-                 <div class="photo" data-title="Del"><img src="img/delete2.png" alt="delete" style="width:30px;" onclick = "delete()">
+                 <div class="photo" data-title="Del" data-toggle="modal" data-target="#deleteModal"><img src="img/delete2.png" alt="delete" style="width:30px;" onclick = "delete()">
                 </div>
             </td>
 		</tr>
@@ -54,7 +111,7 @@
             <td> <div class="photo" data-title="Edit"><img src="img/edit.png" alt="edit" style="width:30px;" onclick = "edit()"></div>
                 </td>
             <td>
-                 <div class="photo" data-title="Del"><img src="img/delete2.png" alt="delete" style="width:30px;" onclick = "delete()">
+                 <div class="photo" data-title="Del" data-toggle="modal" data-target="#deleteModal"><img src="img/delete2.png" alt="delete" style="width:30px;" onclick = "delete()">
                 </div>
             </td>
 		</tr>
@@ -66,7 +123,7 @@
             <td> <div class="photo" data-title="Edit"><img src="img/edit.png" alt="edit" style="width:30px;" onclick = "edit()"></div>
                 </td>
             <td>
-                 <div class="photo" data-title="Del"><img src="img/delete2.png" alt="delete" style="width:30px;" onclick = "delete()">
+                 <div class="photo" data-title="Del" data-toggle="modal" data-target="#deleteModal"><img src="img/delete2.png" alt="delete" style="width:30px;" onclick = "delete()">
                 </div>
             </td>
 		</tr>
@@ -78,7 +135,7 @@
             <td> <div class="photo" data-title="Edit"><img src="img/edit.png" alt="edit" style="width:30px;" onclick = "edit()"></div>
                 </td>
             <td>
-                 <div class="photo" data-title="Del"><img src="img/delete2.png" alt="delete" style="width:30px;" onclick = "delete()">
+                 <div class="photo" data-title="Del" data-toggle="modal" data-target="#deleteModal"><img src="img/delete2.png" alt="delete" style="width:30px;" onclick = "delete()">
                 </div>
             </td>
 		</tr>
@@ -90,7 +147,7 @@
             <td> <div class="photo" data-title="Edit"><img src="img/edit.png" alt="edit" style="width:30px;" onclick = "edit()"></div>
                 </td>
             <td>
-                 <div class="photo" data-title="Del"><img src="img/delete2.png" alt="delete" style="width:30px;" onclick = "delete()">
+                 <div class="photo" data-title="Del" data-toggle="modal" data-target="#deleteModal"><img src="img/delete2.png" alt="delete" style="width:30px;" onclick = "delete()">
                 </div>
             </td>
 		</tr>
@@ -102,7 +159,7 @@
             <td> <div class="photo" data-title="Edit"><img src="img/edit.png" alt="edit" style="width:30px;" onclick = "edit()"></div>
                 </td>
             <td>
-                 <div class="photo" data-title="Del"><img src="img/delete2.png" alt="delete" style="width:30px;" onclick = "delete()">
+                 <div class="photo" data-title="Del" data-toggle="modal" data-target="#deleteModal"><img src="img/delete2.png" alt="delete" style="width:30px;" onclick = "delete()">
                 </div>
             </td>
 		</tr>
@@ -110,6 +167,11 @@
 
 	</tbody>
 </table>
+
+    
+    
+    
+
     
 
     
@@ -118,21 +180,35 @@
     
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
+   
     <!-- our custom js scripts -->
     <script  src="js/main_js.js"></script>
+    <script>
+          $("#btnAddGroup").click(function(event) {
+
+    //Fetch form to apply custom Bootstrap validation
+    var form = $("#formAddGroup")
+
+    if (form[0].checkValidity() === false) {
+      event.preventDefault()
+      event.stopPropagation()
+    }
+    
+    form.addClass('was-validated');
+  });
+        </script>
     
     
-    <script type="text/javascript">
- $(document).ready(function() {
- $("body").css("display", "none");
- $("body").fadeIn(800);
- });
-</script>
+    
 
 
 </body>
