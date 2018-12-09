@@ -22,9 +22,11 @@ if ( WEBGL.isWebGLAvailable() === false ) {
             var foot_sound = new Audio("../sounds/foots.mp3");
             var button_sound = new Audio("../sounds/button.mp3");
             var background_music = new Audio ("../sounds/bensound-cute.mp3");
+            background_music.volume = 0.3;
             var magic_sound = new Audio("../sounds/magic.mp3");
+            magic_sound.volume = 1;
             var drop_sound = new Audio("../sounds/drop.mp3");
-
+            drop_sound.volume = 1;
             //character state
             //1 - forward rot
             //2 - right
