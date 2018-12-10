@@ -162,7 +162,10 @@
         <game_text><a href = "../main.html">MENU</a></game_text>
         <game_text>LEVEL 1
         </game_text>
-        <div></div>
+        <div>
+            <br>
+           <span><img src="../img/music_off.png" alt="music_off" style="width:55px;"  id = "bg_music" onclick = "changeMusic()">
+        </div>
     </div>
     <div class="wrapper" style= "border-bottom:5px dashed white;">
         <div></div>
@@ -326,6 +329,31 @@ function run()
     
     function del(){
         show_looser();
+    }
+    
+    
+</script>
+    
+    
+    
+<script>
+    
+    var background_music = new Audio ("../sounds/bensound-cute.mp3");
+    background_music.volume = 0.3;
+    var winner_sound = new Audio("../sounds/winner.mp3"); // buffers automatically when created
+    var looser_sound = new Audio("../sounds/looser.mp3");
+    
+    function changeMusic(){
+        
+        if (document.getElementById("bg_music").src == "http://0.0.0.0:8000/img/music_off.png" ){
+            
+            background_music.play()
+             document.getElementById("bg_music").src = "http://0.0.0.0:8000/img/music_on.png";
+        }
+        else{
+            background_music.pause()
+            document.getElementById("bg_music").src = "http://0.0.0.0:8000/img/music_off.png"
+        }
     }
 </script>
     

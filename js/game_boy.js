@@ -17,12 +17,13 @@ if ( WEBGL.isWebGLAvailable() === false ) {
 	        var HEIGHT = 360;
 
 			var mixers = [];
+            var background_music = new Audio ("../sounds/bensound-cute.mp3");
+            background_music.volume = 0.3;
             var winner_sound = new Audio("../sounds/winner.mp3"); // buffers automatically when created
             var looser_sound = new Audio("../sounds/looser.mp3");
             var foot_sound = new Audio("../sounds/foots.mp3");
             var button_sound = new Audio("../sounds/button.mp3");
-            var background_music = new Audio ("../sounds/bensound-cute.mp3");
-            background_music.volume = 0.3;
+            
             var magic_sound = new Audio("../sounds/magic.mp3");
             magic_sound.volume = 1;
             var drop_sound = new Audio("../sounds/drop.mp3");
